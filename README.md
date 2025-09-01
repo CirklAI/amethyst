@@ -95,6 +95,3 @@ rm -rf /tmp/amethyst-ssg
 ## License
 
 > © 2025 Cirkl Labs See the [LICENSE](LICENSE)
-
-```
-```
