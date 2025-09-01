@@ -31,18 +31,18 @@ class Server
           context.response.status_code = 404
           context.response.content_type = "text/html"
           context.response.print "<h1>404 Not Found</h1><p>The requested page could not be found.</p>"
-          @logger.warn "Not found: #{path}"
+          @logger.warn "not found: #{path}"
         end
       rescue ex
         context.response.status_code = 500
         context.response.content_type = "text/html"
         context.response.print "<h1>500 Internal Server Error</h1>"
-        @logger.err "Error serving #{path}: #{ex.message}"
+        @logger.err "error serving #{path}: #{ex.message}"
       end
     end
 
     address = server.bind_tcp(port)
-    @logger.info "Listening on http://#{address}"
+    @logger.info "listening on http://#{address}"
 
     server.listen
   end

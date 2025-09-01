@@ -20,14 +20,14 @@ module Amethyst
     end
 
     def show_help
-      @logger.info "Usage: amethyst <command>"
-      @logger.info "Tip: run `amethyst build` to build the site then `amethyst serve [port]` to serve it!"
+      @logger.info "usage: amethyst <command>"
+      @logger.info "tip: run `amethyst build` to build the site then `amethyst serve [port]` to serve it!"
       exit 1
     end
 
     def check_build
       if !File.exists?(".amethyst")
-        @logger.err("Please build the project before running!")
+        @logger.err("please build the project before running!")
         show_help
       end
     end
@@ -45,7 +45,7 @@ module Amethyst
           begin
             port = args[1].to_i16
           rescue ArgumentError
-            @logger.err "Invalid port number: #{args[1]}"
+            @logger.err "invalid port number: #{args[1]}"
             show_help
           end
         else

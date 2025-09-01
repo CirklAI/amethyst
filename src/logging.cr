@@ -1,5 +1,5 @@
 class Logger
-  INFO_COLOR  = "\e[34m"
+  INFO_COLOR  = "\e[35m"
   WARN_COLOR  = "\e[33m"
   ERR_COLOR   = "\e[31m"
   DEBUG_COLOR = "\e[36m"

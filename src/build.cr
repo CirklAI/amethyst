@@ -21,7 +21,7 @@ class Builder
         generate(full_path)
       else
         if full_path.to_s.ends_with?(".md")
-          @logger.info "  * Generating: #{full_path}"
+          @logger.info "    * generating: #{full_path}"
 
           markdown_content = File.read(full_path)
           html_body = @markdown.generate_html(markdown_content)
@@ -38,7 +38,7 @@ class Builder
         else
           next if full_path.to_s.ends_with?(".css")
 
-          @logger.info "  * Copying: #{full_path}"
+          @logger.info "    * copying: #{full_path}"
           content = File.read(full_path)
           relative_path = full_path.to_s.gsub(/^look\//, "")
           output_path = Path[@build_dir, relative_path]
@@ -49,7 +49,7 @@ class Builder
       end
     end
   rescue ex : Exception
-    @logger.err "! Error accessing #{path}: #{ex.message}"
+    @logger.err "! error accessing #{path}: #{ex.message}"
   end
 
   private def get_styles_for_page(md_path : String) : String
@@ -82,15 +82,15 @@ class Builder
   end
 
   def run
-    @logger.info "+ Building for production..."
+    @logger.info "+ building for production..."
     if !File.exists?(@build_dir)
       FileUtils.mkdir(@build_dir)
     end
 
-    @logger.info "+ Generating static pages..."
+    @logger.info "+ generating static pages..."
     generate("site")
     generate("look")
 
-    @logger.info "+ Done!"
+    @logger.info "+ done!"
   end
 end
