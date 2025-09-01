@@ -72,8 +72,29 @@ Install crystal and shards then run:
 
 ```shell
 shards build --release --no-debug -O3
-````
+```
+
+## Installing
+
+```shell
+# download repo
+git clone https://github.com/CirklAI/amethyst.git /tmp/amethyst-ssg
+cd /tmp/amethyst-ssg
+
+# build release
+shards build --release --no-debug -O3
+
+# install
+sudo mv /tmp/amethyst-ssg/bin/amethyst /usr/local/bin/
+
+# cleanup
+cd $HOME
+rm -rf /tmp/amethyst-ssg
+```
 
 ## License
 
 > © 2025 Cirkl Labs See the [LICENSE](LICENSE)
+
+```
+```
