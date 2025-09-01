@@ -58,7 +58,7 @@ Put static assets in the `assets/` folder
 
 Example:
 
-````shell
+```shell
 assets/
     favicon.ico
     secret-cat-photo.png
