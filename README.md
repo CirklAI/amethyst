@@ -54,6 +54,14 @@ h1 {
 
 > There will be a more elegant solution in the future
 
+## Building
+
+Install crystal and shards then run:
+
+```shell
+shards build --release --no-debug -O3
+```
+
 ## License
 
 > © 2025 Cirkl Labs See the [LICENSE](LICENSE)
