@@ -2,6 +2,7 @@ require "./logging"
 require "./markdown"
 require "./build"
 require "./server"
+require "./dev"
 
 module Amethyst
   VERSION = "0.1.0"
@@ -11,12 +12,14 @@ module Amethyst
     @markdown : Markdown
     @build : Builder
     @server : Server
+    @dev : Dev
 
     def initialize
       @logger = Logger.new
       @markdown = Markdown.new
       @build = Builder.new
       @server = Server.new
+      @dev = Dev.new
     end
 
     def show_help
@@ -56,6 +59,8 @@ module Amethyst
         @server.serve(port)
       when "build"
         @build.run
+      when "dev"
+        @dev.run
       else
         show_help
       end

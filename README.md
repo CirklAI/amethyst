@@ -54,13 +54,25 @@ h1 {
 
 > There will be a more elegant solution in the future
 
+Put static assets in the `assets/` folder
+
+Example:
+
+````shell
+assets/
+    favicon.ico
+    secret-cat-photo.png
+site/
+look/
+```
+
 ## Building
 
 Install crystal and shards then run:
 
 ```shell
 shards build --release --no-debug -O3
-```
+````
 
 ## License
 

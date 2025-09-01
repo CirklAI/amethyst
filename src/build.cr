@@ -72,6 +72,7 @@ class Builder
 
   private def create_html_with_styles(body : String, styles : String) : String
     html = "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n"
+    html += "<link href=\"/assets/favicon.ico\" rel=\"icon\">\n"
 
     unless styles.empty?
       html += "<style>\n#{styles}\n</style>\n"
@@ -90,6 +91,7 @@ class Builder
     @logger.info "+ generating static pages..."
     generate("site")
     generate("look")
+    generate("assets")
 
     @logger.info "+ done!"
   end

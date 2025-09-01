@@ -8,6 +8,6 @@ targets:
   amethyst:
     main: src/amethyst.cr
 
-crystal: '>= 1.17.1'
+crystal: ">= 1.17.1"
 
 license: MIT
